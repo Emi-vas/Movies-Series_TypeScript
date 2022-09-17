@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"
 import { BlocBtn, Image, Page } from "./Home.style";
 
 const Home = () => {
+    const navigate = useNavigate()
     const [animationMovie, setAnimationMovie] = useState('')
     const [animationSerie, setAnimationSerie] = useState('')
 
@@ -12,11 +14,13 @@ const Home = () => {
                 <button
                     onMouseEnter={() => setAnimationMovie('imgEnter 0.5s both')}
                     onMouseLeave={() => setAnimationMovie('imgLeaveL 0.5s both')}
+                    onClick={() => navigate('/movies')}
                 >Movies</button>
                 <p>and</p>
                 <button
                     onMouseEnter={() => setAnimationSerie('imgEnter 0.5s both')}
                     onMouseLeave={() => setAnimationSerie('imgLeaveR 0.5s both')}
+                    onClick={() => navigate('/series')}
                 >Series</button>
             </BlocBtn>
 
