@@ -5,6 +5,7 @@ body, html {
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
+    color: rgb(43, 43, 43);
 }
 
 button {
@@ -26,6 +27,8 @@ a {
 
 . {
     color: rgb(189, 54, 42);
+    color: rgb(255, 210, 206);
     color: rgb(255, 218, 169);
     color: rgba(24, 24, 24, 0.5);
+    color: rgb(71, 71, 71);
 }

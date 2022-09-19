@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
-import { BlocBtn, Image, Page } from "./Home.style";
+import { BlocBtn, Image, PageHome } from "./Home.style";
 
 const Home = () => {
     const navigate = useNavigate()
@@ -8,7 +8,7 @@ const Home = () => {
     const [animationSerie, setAnimationSerie] = useState('')
 
     return (
-       <Page>
+       <PageHome>
             <h1>All you want to know about</h1>
             <BlocBtn>
                 <button
@@ -43,7 +43,7 @@ const Home = () => {
                     }}
                 />
             </Image>
-       </Page>
+       </PageHome>
     );
 };
 

@@ -1,12 +1,11 @@
 import styled from "styled-components"
 import { COLORS } from "../assets/constant"
 
-export const Page = styled.div`
+export const PageHome = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     color: white;
     height: 100vh;
 

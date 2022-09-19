@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './page/Home';
 import Movies from './page/Movies';
 import Series from './page/Series';
-import './style.css'
+import './styles/style.css'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
