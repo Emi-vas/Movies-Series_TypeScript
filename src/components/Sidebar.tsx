@@ -27,6 +27,7 @@ const Sidebar = ({ menuSelected, setMenuSelected }: Props) => {
             {
                 listMenu.map((menu) => (
                     <Menu
+                        key={menu.titre}
                         style={{
                             backgroundColor : menuSelected == menu.titre.toLowerCase() ? COLORS.red : "",
                             color: menuSelected == menu.titre.toLowerCase() ? "white" : "",

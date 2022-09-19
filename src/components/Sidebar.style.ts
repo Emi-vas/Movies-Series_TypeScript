@@ -4,12 +4,12 @@ import { COLORS } from "../assets/constant"
 export const Container = styled.div`
     border-right: 2px solid ${COLORS.red};
     min-height: 89vh;
-    background: ${COLORS.background};
-
     
     @media screen and (max-width: 500px){
         position: fixed;
         bottom: 0;
+        z-index: 10;
+        background: ${COLORS.background};
         
         display: flex;
         justify-content: space-around;
@@ -25,7 +25,7 @@ export const Menu = styled.div`
     align-items: center;
     justify-content: center;
 
-    width: 200px;
+    width: 170px;
     text-align: center;
     font-weight: bold;
     padding: 30px 0;
@@ -54,6 +54,16 @@ export const Menu = styled.div`
         i {
             margin: 0;
         }
+    }
+    @media screen and (max-width: 500px) {
+        p {
+            display: inline;
+            font-size: 0.9em;
+        }
+        flex-direction: column-reverse;
+        padding: 0;
+        padding-top: 15px;
+        width: 25%;
     }
 
 
