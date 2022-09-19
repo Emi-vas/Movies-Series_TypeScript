@@ -25,6 +25,10 @@ a {
     font-size: inherit;
 }
 
+li {
+    list-style: none;
+}
+
 . {
     color: rgb(189, 54, 42);
     color: rgb(221, 87, 75);

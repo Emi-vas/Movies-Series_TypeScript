@@ -5,13 +5,13 @@ import { COLORS } from "../assets/constant";
 export const PageContainer = styled.div`
     display: flex;
     background: ${COLORS.background};
+   // position: relative;
 `
 
 
 // movie or serie bloc
 export const PageMain = styled.section`
     flex: 1;
-
     h1 {
         color: ${COLORS.red};
         margin-left: 20px;

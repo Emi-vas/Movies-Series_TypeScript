@@ -18,7 +18,7 @@ const Popular = ({type}: Props) => {
     }, [])
 
     useEffect(() => {
-        console.log(listMovies)
+        //console.log(listMovies)
     }, [listMovies])
 
     return (

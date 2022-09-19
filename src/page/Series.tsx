@@ -6,6 +6,7 @@ import Genres from "../components/menus/Genres";
 import Popular from "../components/menus/Popular";
 import Search from "../components/menus/Search";
 import Yourlist from "../components/menus/Yourlist";
+import MovieDetails from "../components/MovieDetails";
 import Sidebar from "../components/Sidebar"
 import { PageContainer, PageMain } from "../styles/Global.style";
 
@@ -28,6 +29,7 @@ const Series = () => {
                 </PageMain>
             </PageContainer>
 
+            { idMovie && <MovieDetails id={idMovie} type={"tv"} /> }
             <Footer />
         </>
     );

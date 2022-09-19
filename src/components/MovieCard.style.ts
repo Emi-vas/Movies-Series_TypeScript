@@ -6,15 +6,18 @@ export const Card = styled.div`
     width: 23%;
     aspect-ratio: 1/1.4;
     margin: 15px;
+    border-radius: 200px;
 
     overflow: hidden;
+    box-shadow: ${COLORS.boxShadow}3px 3px 10px;
+    transition: all 0.35s;
 
     i {
         position: absolute;
         z-index: 3;
         top: 10px;
         color: white;
-        font-size: 1.5em;
+        font-size: 1.7em;
         background: ${COLORS.red};
         border-radius: 50%;
         padding: 7px;
@@ -39,11 +42,13 @@ export const Card = styled.div`
 
     &:hover {
         cursor: pointer;
+        border-radius: 30px;
+
        h3 {
             transform: translateY(0);
        }
        i {
-            animation: heart 0.5s both;
+            animation: heart 0.5s 0.3s both ease-out;
             &:hover {
                 background-color: ${COLORS.redLight};
             }
@@ -58,6 +63,7 @@ export const Card = styled.div`
     }
     @media screen and (max-width: 500px) {
         width: 70%;
+        border-radius: 30px;
     }
 
     @keyframes heart {
@@ -65,7 +71,7 @@ export const Card = styled.div`
             transform: scale(0);
         }
         50% {
-            transform: scale(1.5);
+            transform: scale(1.7);
         }
         100% {
             transform: scale(1);
