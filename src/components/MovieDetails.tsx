@@ -12,6 +12,7 @@ interface Props {
 const MovieDetails = ({ id, type }: Props) => {
     const navigate = useNavigate()
     const [data, setData] = useState<any>(null)
+    const [isTel, setIsTel] = useState<"Y" | 'N' | null>(null) //don't use boolean, you need to be sure of the screen before loading image
 
     const apiKey = process.env.REACT_APP_MOVIEDB_API_KEY
 
@@ -22,6 +23,14 @@ const MovieDetails = ({ id, type }: Props) => {
             setData(res.data)
             console.log(res.data)
         })
+    }, [])
+
+    useEffect(() => {
+        if(window.innerWidth < 500) {
+            setIsTel('Y')
+        } else {
+            setIsTel('N')
+        }
     }, [])
 
     if(!data) {
@@ -56,7 +65,13 @@ const MovieDetails = ({ id, type }: Props) => {
             </Poster>
 
             <BackgroundImage>
-                <img src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`} alt={data.title} />
+                {
+                    isTel && isTel == "N" && <img src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`} alt={data.title} />
+                }
+                {
+                    isTel && isTel == "Y" && <img src={`https://image.tmdb.org/t/p/original/${data.poster_path}`} alt={data.title} />
+                }
+                
             </BackgroundImage>
         </PageContainer>
     );

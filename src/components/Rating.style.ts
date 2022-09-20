@@ -23,4 +23,8 @@ export const RatingContainer = styled.div`
             transform: scale(1);
         }
     }
+
+    @media screen and (max-width: 500px) {
+        margin-left: 20px;
+    }
 `

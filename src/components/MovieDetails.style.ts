@@ -25,6 +25,11 @@ export const BlockText = styled.div`
     justify-content: center;
     padding-left: 30px;
 
+    @media screen and (max-width: 720px) {
+        width: 90%;
+        padding-left: 0;
+        align-items: center;
+    }
 
     h1 {
         font-size: 3em;
@@ -33,6 +38,8 @@ export const BlockText = styled.div`
 
     ul {
         display: flex;
+        margin: 0;
+        padding: 0;
     }
 
     li {
@@ -48,6 +55,22 @@ export const BlockText = styled.div`
         font-size: 1.2em;
         padding: 10px;
         backdrop-filter: blur(3px);
+    }
+
+    @media screen and (max-width: 500px){
+        font-size: 0.9em;
+        width: 100%;
+        h1 {
+            font-size: 2em;
+        }
+        p {
+            width: 100%;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        li {
+            font-size: 1.2em;
+        }
     }
 
 `
@@ -78,6 +101,10 @@ export const Poster = styled.div`
                 transform: translateX(0);
             }
         }
+    }
+
+    @media screen and (max-width: 720px){
+        display: none;
     }
 `
 
@@ -131,5 +158,11 @@ export const Back = styled.div`
     &:hover {
         cursor: pointer;
         transform: translateX(-5px);
+    }
+
+    @media screen and (max-width: 500px) {
+        top: unset;
+        bottom: 0;
+        font-size: 1.1em;
     }
 `
