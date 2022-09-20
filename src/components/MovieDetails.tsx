@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { Back, BackgroundImage, BlockText, PageContainer, Poster } from "./MovieDetails.style";
+import { Back, BackgroundImage, BlockText, PageContainer, Poster, ShareLikeBloc } from "./MovieDetails.style";
 import axios from "axios"
 import { useNavigate } from "react-router";
 import Rating from "./Rating";
+import { ICONS } from "../assets/constant"
+import { Button } from "../styles/Global.style";
 
 interface Props {
     id: string,
@@ -46,6 +48,7 @@ const MovieDetails = ({ id, type }: Props) => {
             </Back>
 
             <BlockText>
+                
                 <h1>{type == "movie" ? data.title : data.original_name}</h1>
                 <ul>
                     {   
@@ -57,6 +60,16 @@ const MovieDetails = ({ id, type }: Props) => {
                 </ul>
                 <p>{data.overview}</p>
                 <Rating rate={data.vote_average} />
+                <ShareLikeBloc>
+                    <Button>
+                        <p>Add to your list</p>
+                        <i className={ICONS.heartOff}></i>
+                    </Button>
+                    <Button>
+                        <p>Share</p>
+                        <i className={ICONS.share}></i>
+                    </Button>
+                </ShareLikeBloc>
             </BlockText>
 
 

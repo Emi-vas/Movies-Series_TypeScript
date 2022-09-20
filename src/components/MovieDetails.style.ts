@@ -62,6 +62,7 @@ export const BlockText = styled.div`
         width: 100%;
         h1 {
             font-size: 2em;
+            max-width: 80%;
         }
         p {
             width: 100%;
@@ -70,11 +71,19 @@ export const BlockText = styled.div`
         }
         li {
             font-size: 1.2em;
+            text-align: center;
         }
     }
 
 `
+export const ShareLikeBloc = styled.div`
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
 
+    margin-top: 30px;
+`
 
 export const Poster = styled.div`
     position: relative;
@@ -128,7 +137,11 @@ export const BackgroundImage = styled.div`
         left: 0;
         right: 0;
         content: "";
-        background: rgba(24, 24, 24, 0.7);;
+        background: rgba(24, 24, 24, 0.7);
+
+        @media screen and (max-width: 500px) {
+            background: rgba(24, 24, 24, 0.85);
+        }
     }
 `
 
@@ -161,8 +174,7 @@ export const Back = styled.div`
     }
 
     @media screen and (max-width: 500px) {
-        top: unset;
-        bottom: 0;
+      
         font-size: 1.1em;
     }
 `

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router';
+import { ICONS } from '../assets/constant';
 import { Card, Image, Medal } from './MovieCard.style';
 
 interface Props {
@@ -15,8 +16,7 @@ const MovieCard = ({movie, type, index}: Props) => {
         <Card
             onClick={() => navigate(`?id=${movie.id}`)}
         >
-            {/* <i className='fa-solid fa-heart'></i> */}
-            <i className="fa-regular fa-heart"></i>
+            <i className={ICONS.heartOff}></i>
             <h3>
                 {
                    type == "movie" ? movie.title : movie.name

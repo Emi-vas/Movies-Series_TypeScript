@@ -24,3 +24,30 @@ export const ListMovies = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
 `
+
+
+//Buttons
+export const Button = styled.button`
+    display: flex;
+    align-items: center;
+    z-index: 11;
+
+    background: ${COLORS.red};
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 5px 20px;
+    margin: 15px;
+    transition: transform 0.3s;
+
+    i {
+        font-size: 1.5em;
+    }
+    p {
+        margin: 0;
+    }
+
+    &:hover {
+        transform: translateX(-10px);
+        background: ${COLORS.redLight};
+    }
+`

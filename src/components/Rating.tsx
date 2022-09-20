@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ICONS } from '../assets/constant';
 import { RatingContainer } from './Rating.style';
 
 interface Props {
@@ -23,14 +24,14 @@ const Rating = ({ rate }: Props) => {
 
         for(let i = 0; i < 5 ; i++) {
             if(nbFullStars > 0) {
-                tabTemp.push('fa-solid fa-star')
+                tabTemp.push(ICONS.starFull)
                 nbFullStars = nbFullStars - 1
             } else {
                 if(!haflStarSet && isHalfStar) {
-                    tabTemp.push('fa-solid fa-star-half-stroke')
+                    tabTemp.push(ICONS.starHalf)
                     haflStarSet = true
                 } else {
-                    tabTemp.push('fa-regular fa-star')
+                    tabTemp.push(ICONS.starEmpty)
                 }
             }
         }
@@ -50,7 +51,7 @@ const Rating = ({ rate }: Props) => {
                         key={index}
                         className={star}
                         style={{
-                            animation: `0.3s ${(index*0.1)}s both starArrive`
+                            animation: `0.3s ${(1 + index*0.1)}s both starArrive`
                         }}
                     ></i>
                 ))
