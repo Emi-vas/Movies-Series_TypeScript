@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Back, BackgroundImage, BlockText, PageContainer, Poster } from "./MovieDetails.style";
 import axios from "axios"
 import { useNavigate } from "react-router";
+import Rating from "./Rating";
 
 interface Props {
     id: string,
@@ -46,7 +47,9 @@ const MovieDetails = ({ id, type }: Props) => {
                     }
                 </ul>
                 <p>{data.overview}</p>
+                <Rating rate={data.vote_average} />
             </BlockText>
+
 
             <Poster>
                 <img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} alt="" />

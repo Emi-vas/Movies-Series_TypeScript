@@ -25,6 +25,7 @@ export const BlockText = styled.div`
     justify-content: center;
     padding-left: 30px;
 
+
     h1 {
         font-size: 3em;
         margin-bottom: 0;
@@ -45,6 +46,8 @@ export const BlockText = styled.div`
     p{
         max-width: 90%;
         font-size: 1.2em;
+        padding: 10px;
+        backdrop-filter: blur(3px);
     }
 
 `
@@ -65,13 +68,14 @@ export const Poster = styled.div`
         width: 100%;
         aspect-ratio: 1/1.4;
         margin-right: 15px;
-        animation: arrive 0.3s both;
+        animation: arrive 0.3s 1s both;
+        transform: translateX(500px);
         border-radius: 30px;
-        box-shadow: 3px 3px 7px ${COLORS.boxShadow};
+        box-shadow: 3px 3px 10px ${COLORS.boxShadow2};
 
         @keyframes arrive {
-            from {
-                transform: translateX(100px);
+            to {
+                transform: translateX(0);
             }
         }
     }
