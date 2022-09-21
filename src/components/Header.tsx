@@ -1,5 +1,6 @@
 import { HeaderBloc, Nav } from "./Header.style";
 import { Link } from "react-router-dom"
+import { COLORS } from "../assets/constant";
 
 interface Props {
     page : string
@@ -14,12 +15,16 @@ const Header = ({ page }: Props) => {
                     to='/movies'
                     style={{ 
                         fontSize : page == "movie" ? "2em" : "1.5em",
+                        backgroundColor: page == "movie" ? COLORS.redLight : "",
+                        color: page == "movie" ? COLORS.yellow : "",
                      }}
                 >Movies</Link>
                 <Link 
                     to="/series"
                     style={{ 
-                        fontSize : page == "tv" ? "2em" : "1.5em"
+                        fontSize : page == "tv" ? "2em" : "1.5em",
+                        backgroundColor: page == "tv" ? COLORS.redLight : "",
+                        color: page == "tv" ? COLORS.yellow : "",
                     }}
                 >Series</Link>
             </Nav>

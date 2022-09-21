@@ -30,11 +30,11 @@ export const Nav = styled.nav`
 
     a {
         background: rgb(189, 54, 42, 1);
-        border-radius: 50px;
+        border-radius: 2px;
         color: white;
         font-size: 1.5em;
         margin: 0 20px;
-        padding: 0;
+        padding: 0 10px;
         &:hover {
             font-weight: 500;
             color: ${COLORS.yellow};
