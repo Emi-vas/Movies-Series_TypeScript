@@ -15,6 +15,7 @@ const Series = () => {
     const idMovie = searchParams.get('id')
 
     const [menuSelected, setMenuSelected] = useState("popular")
+    const [reloadCard, setReloadCard] = useState(false) //reload to add favorit list
 
 
     return (
@@ -24,7 +25,7 @@ const Series = () => {
                 <Sidebar menuSelected={menuSelected} setMenuSelected={setMenuSelected}/>
                 <PageMain>
                     { menuSelected == "search" && <Search /> }
-                    { menuSelected == "popular" && <Popular type="tv" />}
+                    { menuSelected == "popular" && <Popular type="tv" reloadCard={reloadCard} setReloadCard={setReloadCard} />}
                     { menuSelected == "genres" && <Genres /> }
                     { menuSelected == "your list" && <Yourlist /> }
                 </PageMain>

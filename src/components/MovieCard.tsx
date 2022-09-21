@@ -7,15 +7,16 @@ import { Card, Image, Medal } from './MovieCard.style';
 interface Props {
     movie : any,
     type : "tv" | "movie",
-    index: number
+    index: number,
+    reloadCard: boolean,
+    setReloadCard: (val:boolean) => void
 }
 
-const MovieCard = ({movie, type, index}: Props) => {
+const MovieCard = ({movie, type, index, reloadCard, setReloadCard}: Props) => {
     const navigate = useNavigate()
     const baseImgUrl = "https://image.tmdb.org/t/p/w500/"
     
     const [isFavorit, setIsFavorit] = useState(false)
-    const [reloadCompo, setReloadCompo] = useState(false) //reload to add favorit list
 
 
     useEffect(() => {
@@ -31,8 +32,7 @@ const MovieCard = ({movie, type, index}: Props) => {
         } else {
             setIsFavorit(false)
         }
-        
-    }, [reloadCompo])
+    }, [reloadCard, movie])
 
     return (
         <Card
@@ -52,11 +52,12 @@ const MovieCard = ({movie, type, index}: Props) => {
                         id: movie.id, 
                         img: movie.poster_path
                     })
-                    setReloadCompo(!reloadCompo)
+                    setReloadCard(!reloadCard)
                 }}
                 style={{
                     transform: 'scale(1)',
-                    animation: isFavorit ? "none" : ""
+                    animation: isFavorit ? "none" : "",
+                    fontSize: isFavorit ? '2em': ''
                 }}
             ></i>
             <h3>

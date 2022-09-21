@@ -13,13 +13,13 @@ const Header = ({ page }: Props) => {
                 <Link 
                     to='/movies'
                     style={{ 
-                        fontSize : page == "movies" ? "2em" : "1.5em",
+                        fontSize : page == "movie" ? "2em" : "1.5em",
                      }}
                 >Movies</Link>
                 <Link 
                     to="/series"
                     style={{ 
-                        fontSize : page == "series" ? "2em" : "1.5em"
+                        fontSize : page == "tv" ? "2em" : "1.5em"
                     }}
                 >Series</Link>
             </Nav>
