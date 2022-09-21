@@ -16,6 +16,7 @@ const Series = () => {
 
     const [menuSelected, setMenuSelected] = useState("popular")
 
+
     return (
         <>
             <Header page='series' />
