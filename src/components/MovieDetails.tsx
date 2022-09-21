@@ -5,18 +5,37 @@ import { useNavigate } from "react-router";
 import Rating from "./Rating";
 import { ICONS } from "../assets/constant"
 import { Button } from "../styles/Global.style";
+import { addToList, isMovieOnList } from "../functions/yourList"
 
 interface Props {
     id: string,
-    type: "movie" | "tv"
+    type: "movie" | "tv",
+    reloadCard: boolean,
+    setReloadCard: (val:boolean) => void
 }
 
-const MovieDetails = ({ id, type }: Props) => {
+const MovieDetails = ({ id, type, reloadCard, setReloadCard }: Props) => {
     const navigate = useNavigate()
     const [data, setData] = useState<any>(null)
     const [isTel, setIsTel] = useState<"Y" | 'N' | null>(null) //don't use boolean, you need to be sure of the screen before loading image
+    const [isFavorit, setIsFavorit] = useState(false)
 
-    const apiKey = process.env.REACT_APP_MOVIEDB_API_KEY
+    const apiKey = process.env.REACT_APP_MOVIEDB_API_KEY 
+
+    useEffect(() => {
+        let yourList: any = localStorage.getItem('yourList')
+
+        if(!yourList) {
+            setIsFavorit(false)
+        }
+        
+        yourList = JSON.parse(yourList)
+        if(isMovieOnList(parseInt(id), yourList)){
+            setIsFavorit(true)
+        } else {
+            setIsFavorit(false)
+        }
+    }, [])
 
     useEffect(() => {
         axios
@@ -61,10 +80,31 @@ const MovieDetails = ({ id, type }: Props) => {
                 <p>{data.overview}</p>
                 <Rating rate={data.vote_average} />
                 <ShareLikeBloc>
-                    <Button>
-                        <p>Add to your list</p>
-                        <i className={ICONS.heartOff}></i>
-                    </Button>
+                    <Button
+                        onClick={() => {
+                            addToList({
+                                title: type == "movie" ? data.title : data.original_name,
+                                id: data.id,
+                                img: data.poster_path
+                            })
+                            setIsFavorit(!isFavorit)
+                            setReloadCard(!reloadCard)
+                        }}
+                    >
+                        {
+                            isFavorit ? (
+                                <>
+                                    <p>Remove from your list</p>
+                                    <i className={ICONS.heartOn}></i>
+                                </>
+                            ) : (
+                                <>
+                                    <p>Add to your list</p>
+                                    <i className={ICONS.heartOff}></i>
+                                </>
+                            )
+                        }
+                        </Button>
                     <Button>
                         <p>Share</p>
                         <i className={ICONS.share}></i>

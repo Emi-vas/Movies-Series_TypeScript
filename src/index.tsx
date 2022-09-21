@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './page/Home';
 import MainPage from './page/MainPage';
-import Movies from './page/Movies';
-import Series from './page/Series';
 import './styles/style.css'
 
 const root = ReactDOM.createRoot(

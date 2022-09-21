@@ -35,7 +35,7 @@ const MainPage = ({type}: Props) => {
                 </PageMain>
             </PageContainer>
 
-            { idMovie && <MovieDetails id={idMovie} type={type} /> }
+            { idMovie && <MovieDetails id={idMovie} type={type} reloadCard={reloadCard} setReloadCard={setReloadCard} /> }
             <Footer />
         </>
     );
