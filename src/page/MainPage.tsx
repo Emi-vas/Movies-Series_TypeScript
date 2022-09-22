@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom"
 import Footer from "../components/Footer";
 import Header from "../components/Header"
-import Genres from "../components/menus/Genres";
+import Genres from "../components/menus/genres/Genres";
 import Popular from "../components/menus/Popular";
 import Search from "../components/menus/Search";
 import Yourlist from "../components/menus/Yourlist";

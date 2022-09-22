@@ -58,7 +58,13 @@ const Yourlist = ({reloadCard, setReloadCard, type}: Props) => {
             <ListMovies>
                 {
                     listFiltred && 
-                    listFiltred.map((movie: Movie) => <MovieCard movie={movie} reloadCard={reloadCard} setReloadCard={setReloadCard} />)
+                    listFiltred.map((movie: Movie, index: number) => 
+                        <MovieCard 
+                            movie={movie} 
+                            reloadCard={reloadCard} 
+                            setReloadCard={setReloadCard} 
+                            key={index}
+                        />)
                 }
             </ListMovies>
             {

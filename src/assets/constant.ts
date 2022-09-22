@@ -13,5 +13,6 @@ export const ICONS = {
     starFull: "fa-solid fa-star",
     starHalf: "fa-solid fa-star-half-stroke",
     starEmpty: "fa-regular fa-star",
-    share: "fa-solid fa-share-from-square"
+    share: "fa-solid fa-share-from-square",
+    genre: "fa-solid fa-film"
 }

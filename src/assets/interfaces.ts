@@ -4,3 +4,8 @@ export interface Movie {
     img : string,
     type: "movie" | "tv"
 }
+
+export interface Genre {
+    id: number,
+    name: string,
+}
