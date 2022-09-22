@@ -28,6 +28,9 @@ a {
 li {
     list-style: none;
 }
+ul {
+    padding: 0;
+}
 
 .link {
     cursor: pointer;
