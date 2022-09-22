@@ -29,6 +29,14 @@ li {
     list-style: none;
 }
 
+.link {
+    cursor: pointer;
+    color: rgb(43, 43, 43);
+}
+.link:hover {
+    color: rgb(221, 87, 75);
+}
+
 . {
     color: rgb(189, 54, 42);
     color: rgb(221, 87, 75);

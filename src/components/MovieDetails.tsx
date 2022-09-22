@@ -85,7 +85,8 @@ const MovieDetails = ({ id, type, reloadCard, setReloadCard }: Props) => {
                             addToList({
                                 title: type == "movie" ? data.title : data.original_name,
                                 id: data.id,
-                                img: data.poster_path
+                                img: data.poster_path,
+                                type: type
                             })
                             setIsFavorit(!isFavorit)
                             setReloadCard(!reloadCard)

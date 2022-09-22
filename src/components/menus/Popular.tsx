@@ -31,9 +31,12 @@ const Popular = ({type, reloadCard, setReloadCard}: Props) => {
                     listMovies &&
                     listMovies.map((movie: any, index: number) => (
                         <MovieCard 
-                            movie={movie} 
-                            type={type} 
-                            index={index} 
+                            movie={{
+                                title: type == "movie" ? movie.title : movie.name,
+                                id: movie.id,
+                                img:  movie.poster_path,
+                                type: type
+                            }} 
                             key={index} 
                             reloadCard={reloadCard} 
                             setReloadCard={setReloadCard}

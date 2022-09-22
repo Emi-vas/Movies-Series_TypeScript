@@ -6,14 +6,12 @@ import { addToList, isMovieOnList } from '../functions/yourList';
 import { Card, Image, Medal } from './MovieCard.style';
 
 interface Props {
-    movie : any,
-    type : "tv" | "movie",
-    index: number,
+    movie : Movie,
     reloadCard: boolean,
     setReloadCard: (val:boolean) => void
 }
 
-const MovieCard = ({movie, type, index, reloadCard, setReloadCard}: Props) => {
+const MovieCard = ({movie, reloadCard, setReloadCard}: Props) => {
     const navigate = useNavigate()
     const baseImgUrl = "https://image.tmdb.org/t/p/w500/"
     
@@ -48,11 +46,7 @@ const MovieCard = ({movie, type, index, reloadCard, setReloadCard}: Props) => {
                 onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
-                    addToList({
-                        title: type == "movie" ? movie.title : movie.name, 
-                        id: movie.id, 
-                        img: movie.poster_path
-                    })
+                    addToList(movie)
                     setReloadCard(!reloadCard)
                 }}
                 style={{
@@ -63,24 +57,12 @@ const MovieCard = ({movie, type, index, reloadCard, setReloadCard}: Props) => {
             ></i>
             <h3>
                 {
-                   type == "movie" ? movie.title : movie.name
+                   movie.title
                 }
             </h3>
             <Image>
-                <img src={baseImgUrl + movie.poster_path} alt={movie.title} />
+                <img src={baseImgUrl + movie.img} alt={movie.title} />
             </Image>
-            { 
-                index == 0 && 
-                <Medal><img src="assets/img/or.png" alt=" medal" /></Medal>
-            }
-            { 
-                index == 1 && 
-                <Medal><img src="assets/img/argent.png" alt=" medal" /></Medal>
-            }
-            { 
-                index == 2 && 
-                <Medal><img src="assets/img/bronze.png" alt=" medal" /></Medal>
-            }
         </Card>
     );
 };

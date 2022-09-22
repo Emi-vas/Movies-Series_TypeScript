@@ -1,5 +1,6 @@
 export interface Movie {
     title : string,
     id : number,
-    img : string
+    img : string,
+    type: "movie" | "tv"
 }
