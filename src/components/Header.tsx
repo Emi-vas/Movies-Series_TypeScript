@@ -15,7 +15,6 @@ const Header = ({ page }: Props) => {
                     to='/movies'
                     style={{ 
                         fontSize : page == "movie" ? "2em" : "1.5em",
-                        backgroundColor: page == "movie" ? COLORS.redLight : "",
                         color: page == "movie" ? COLORS.yellow : "",
                      }}
                 >Movies</Link>
@@ -23,7 +22,6 @@ const Header = ({ page }: Props) => {
                     to="/series"
                     style={{ 
                         fontSize : page == "tv" ? "2em" : "1.5em",
-                        backgroundColor: page == "tv" ? COLORS.redLight : "",
                         color: page == "tv" ? COLORS.yellow : "",
                     }}
                 >Series</Link>

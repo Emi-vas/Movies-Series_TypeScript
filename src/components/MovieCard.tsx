@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { COLORS, ICONS } from '../assets/constant';
+import { Movie } from '../assets/interfaces';
 import { addToList, isMovieOnList } from '../functions/yourList';
 import { Card, Image, Medal } from './MovieCard.style';
 

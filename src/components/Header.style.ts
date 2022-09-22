@@ -30,7 +30,7 @@ export const Nav = styled.nav`
 
     a {
         background: rgb(189, 54, 42, 1);
-        border-radius: 2px;
+        border-radius: 20px;
         color: white;
         font-size: 1.5em;
         margin: 0 20px;

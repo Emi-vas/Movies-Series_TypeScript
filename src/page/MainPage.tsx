@@ -15,7 +15,7 @@ interface Props {
 }
 
 const MainPage = ({type}: Props) => {
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [searchParams, _] = useSearchParams()
     const idMovie = searchParams.get('id')
 
     const [menuSelected, setMenuSelected] = useState("popular")
