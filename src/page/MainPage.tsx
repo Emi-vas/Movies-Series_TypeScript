@@ -30,7 +30,7 @@ const MainPage = ({type}: Props) => {
                 <PageMain>
                     { menuSelected == "search" && <Search /> }
                     { menuSelected == "popular" && <Popular type={type} reloadCard={reloadCard} setReloadCard={setReloadCard} />}
-                    { menuSelected == "genres" && <Genres /> }
+                    { menuSelected == "genres" && <Genres type={type}/> }
                     { menuSelected == "your list" && <Yourlist type={type} reloadCard={reloadCard} setReloadCard={setReloadCard}/> }
                 </PageMain>
             </PageContainer>
