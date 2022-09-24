@@ -38,6 +38,8 @@ export const BlockText = styled.div`
 
     ul {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         margin: 0;
         padding: 0;
     }
@@ -51,17 +53,17 @@ export const BlockText = styled.div`
 
 
     p{
-        max-width: 90%;
+        max-width: 95%;
         font-size: 1.2em;
         padding: 10px;
         backdrop-filter: blur(3px);
     }
 
     @media screen and (max-width: 500px){
-        font-size: 0.9em;
+        font-size: 0.8em;
         width: 100%;
         h1 {
-            font-size: 2em;
+            font-size: 1.5em;
             max-width: 80%;
         }
         p {
@@ -83,6 +85,7 @@ export const ShareLikeBloc = styled.div`
     width: 100%;
 
     margin-top: 30px;
+    
 `
 
 export const Poster = styled.div`

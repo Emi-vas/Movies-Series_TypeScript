@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Genre } from '../../../assets/interfaces';
-import { ListOptions, Option, SelectGenre } from './GenreSearch.style';
+import { isSizeTel } from '../../../functions/utils';
+import { ListOptions, ListOptionsTel, Option, SelectGenre } from './GenreSearch.style';
 import MovieListByGenre from './MovieListByGenre';
 
 interface Props {
@@ -19,7 +20,7 @@ const GenreSearch = ({ genreSelected, genres, setGenreSelected, type }: Props) =
            <div style={{ display: "flex" }}>
                 <SelectGenre
                     tabIndex={0}
-                    onBlur={() => setDisplayList(false)}
+                    onBlur={() => !isSizeTel ? setDisplayList(false) : ''}
                     onClick={() => setDisplayList(!displayList)}
                 >
 
@@ -31,7 +32,7 @@ const GenreSearch = ({ genreSelected, genres, setGenreSelected, type }: Props) =
                     ><div>{genreSelected.name}</div><div>&#x25BC;</div></div>
                     <ListOptions
                         style={{
-                            display: displayList ? "" : "none"
+                            display: displayList && !isSizeTel() ? "" : "none"
                         }}
                     >
                         {
@@ -41,6 +42,26 @@ const GenreSearch = ({ genreSelected, genres, setGenreSelected, type }: Props) =
                         }
                     </ListOptions>
                 </SelectGenre>
+
+                <ListOptionsTel
+                    style={{
+                        display: displayList && isSizeTel() ? "" : "none"
+                    }}
+                >
+                    <p onClick={() => setDisplayList(false)}>x</p>
+                    {
+                        genres
+                        .filter((genre) => genre.name != genreSelected.name)
+                        .map((genre) => (
+                            <div 
+                                onClick={() => {
+                                    setGenreSelected(genre)
+                                    setDisplayList(false)
+                                }} 
+                                key={genre.id}
+                            >{genre.name}</div>))
+                    }
+                </ListOptionsTel>
            </div>
 
             <MovieListByGenre genreSelected={genreSelected} type={type}/>

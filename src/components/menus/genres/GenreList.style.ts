@@ -44,5 +44,6 @@ export const GenreItem = styled.li`
 
     @media screen and (max-width: 500px){
         width: 100%;
+
     }
 `

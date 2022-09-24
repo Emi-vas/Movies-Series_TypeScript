@@ -37,3 +37,33 @@ export const ListOptions = styled.div`
     z-index: 20;
     background: ${COLORS.redLight};
 `
+
+export const ListOptionsTel = styled.div`
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(24, 24, 24, 0.97);
+    color: white;
+    z-index: 13;
+    overflow: scroll;
+
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        color: ${COLORS.yellow};
+        font-size: 3em;
+        text-align: center;
+        margin: 0;
+        padding: 10px;
+    }
+
+    div {
+        text-align: center;
+        padding: 30px 0;
+        width: 100%;
+        font-size: 1.1em;
+    }
+`

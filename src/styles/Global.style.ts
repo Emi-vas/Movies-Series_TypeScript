@@ -50,4 +50,8 @@ export const Button = styled.button`
         transform: translateX(-10px);
         background: ${COLORS.redLight};
     }
+
+    @media screen and (max-width: 500px) {
+        padding: 3px 10px;
+    }
 `
