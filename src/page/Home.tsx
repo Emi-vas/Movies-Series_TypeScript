@@ -9,7 +9,7 @@ const Home = () => {
 
     return (
        <PageHome>
-            <h1>All you want to know about</h1>
+            <h1>Explore the world of</h1>
             <BlocBtn>
                 <button
                     onMouseEnter={() => setAnimationMovie('imgEnter 0.5s both')}
