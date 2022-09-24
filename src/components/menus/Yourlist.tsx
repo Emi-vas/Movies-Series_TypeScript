@@ -73,7 +73,8 @@ const Yourlist = ({reloadCard, setReloadCard, type}: Props) => {
                     style={{
                         marginLeft: "30px",
                         fontSize: "2em",
-                        color: COLORS.boxShadow
+                        color: COLORS.boxShadow,
+                        minHeight: "65vh"
                     }}
                 >There is no {type == "movie" ? "movies": "series"} in your list</p>
             }

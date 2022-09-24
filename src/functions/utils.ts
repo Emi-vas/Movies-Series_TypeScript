@@ -7,3 +7,11 @@ export const createArray = (n: number): number[] => {
 
     return array
 }
+
+export const isSizeTel = (): boolean => {
+    if (window.innerWidth < 500) {
+        return true
+    } else {
+        return false
+    }
+}

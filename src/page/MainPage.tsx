@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom"
 import Footer from "../components/Footer";
 import Header from "../components/Header"
@@ -21,7 +21,6 @@ const MainPage = ({type}: Props) => {
     const [menuSelected, setMenuSelected] = useState("popular")
     const [reloadCard, setReloadCard] = useState(false) //reload to add favorit list
 
-
     return (
         <>
             <Header page={type} />
@@ -36,6 +35,7 @@ const MainPage = ({type}: Props) => {
             </PageContainer>
 
             { idMovie && <MovieDetails id={idMovie} type={type} reloadCard={reloadCard} setReloadCard={setReloadCard} /> }
+            
             <Footer />
         </>
     );

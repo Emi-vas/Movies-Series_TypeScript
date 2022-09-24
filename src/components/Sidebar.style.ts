@@ -14,7 +14,7 @@ export const Container = styled.div`
         display: flex;
         justify-content: space-around;
 
-        min-height: unset;
+        min-height: 90px;
         width: 100%;
         border: none;
     }

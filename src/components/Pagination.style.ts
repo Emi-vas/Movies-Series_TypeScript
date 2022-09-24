@@ -22,13 +22,18 @@ export const PageNumber = styled.div`
     }
 `
 
-/*    fontWeight: 500
-    margin: "5px",
-    background: COLORS.yellow,
-    width: "35px",
-    height: "35px",
-    borderRadius: "3px",
-    
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"*/
+export const PageTel = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${COLORS.yellow};
+    width: 130px;
+    margin: 10px;
+    font-size: 0.9em;
+
+    border-radius: 30px;
+    i {
+        font-size: 1.3em;
+        padding: 7px;
+    }
+`
