@@ -7,12 +7,12 @@ export const SearchBar = styled.div`
     align-items: center;
     border: 2px solid ${COLORS.redLight};
     border-radius: 30px;
-
     overflow: hidden;
 
+
     input {
-        font-size: 2.3em;
-        padding: 10px 17px;
+        font-size: 2em;
+        padding: 12px 20px;
         color: ${COLORS.gray};
     }
 

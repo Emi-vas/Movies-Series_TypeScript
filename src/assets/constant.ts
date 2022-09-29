@@ -18,3 +18,5 @@ export const ICONS = {
     genre: "fa-solid fa-film",
     search: "fa-solid fa-magnifying-glass"
 }
+
+export const API_KEY = process.env.REACT_APP_MOVIEDB_API_KEY
