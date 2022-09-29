@@ -26,8 +26,6 @@ export const SearchBar = styled.div`
 
         &:hover {
             cursor: pointer;
-            //background: ${COLORS.red};
-           // border-color: ${COLORS.red};
             transform: scale(1.3);
         }
     }

@@ -14,8 +14,6 @@ const Search = ({ type }: Props) => {
     const searchItem = () => {
         if(searchChanged) {
             setSearchChanged(false)
-            
-            
             console.log(searchValue)
         }
     }

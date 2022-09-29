@@ -20,7 +20,11 @@ const GenreSearch = ({ genreSelected, genres, setGenreSelected, type }: Props) =
            <div style={{ display: "flex" }}>
                 <SelectGenre
                     tabIndex={0}
-                    onBlur={() => !isSizeTel ? setDisplayList(false) : ''}
+                    onBlur={() => {
+                        if(window.innerWidth > 500) {
+                            setDisplayList(false)
+                        }
+                    }}
                     onClick={() => setDisplayList(!displayList)}
                 >
 
@@ -32,7 +36,7 @@ const GenreSearch = ({ genreSelected, genres, setGenreSelected, type }: Props) =
                     ><div>{genreSelected.name}</div><div>&#x25BC;</div></div>
                     <ListOptions
                         style={{
-                            display: displayList && !isSizeTel() ? "" : "none"
+                            display: displayList ? "" : "none"
                         }}
                     >
                         {

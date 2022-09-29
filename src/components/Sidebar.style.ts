@@ -3,7 +3,7 @@ import { COLORS } from "../assets/constant"
 
 export const Container = styled.div`
     border-right: 2px solid ${COLORS.red};
-    min-height: 80vh;
+    min-height: 89vh;
     
     @media screen and (max-width: 500px){
         position: fixed;
