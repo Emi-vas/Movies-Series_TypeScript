@@ -55,7 +55,9 @@ const Yourlist = ({reloadCard, setReloadCard, type}: Props) => {
 
                 > see {type == "movie" ? "series" : "movies"}</span>
             </h1>
-            <ListMovies>
+            <ListMovies 
+                style={{display: !listFiltred[0] ? "none" : ""}}
+            >
                 {
                     listFiltred && 
                     listFiltred.map((movie: Movie, index: number) => 

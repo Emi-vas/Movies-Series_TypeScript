@@ -27,7 +27,7 @@ const MainPage = ({type}: Props) => {
             <PageContainer>
                 <Sidebar menuSelected={menuSelected} setMenuSelected={setMenuSelected}/>
                 <PageMain>
-                    { menuSelected == "search" && <Search /> }
+                    { menuSelected == "search" && <Search type={type}/> }
                     { menuSelected == "popular" && <Popular type={type} reloadCard={reloadCard} setReloadCard={setReloadCard} />}
                     { menuSelected == "genres" && <Genres type={type}/> }
                     { menuSelected == "your list" && <Yourlist type={type} reloadCard={reloadCard} setReloadCard={setReloadCard}/> }

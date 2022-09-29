@@ -5,7 +5,6 @@ import { COLORS } from "../assets/constant";
 export const PageContainer = styled.div`
     display: flex;
     background: ${COLORS.background};
-   // position: relative;
 `
 
 
@@ -23,6 +22,9 @@ export const ListMovies = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: flex-start;
+
+   min-height: 70vh;
 `
 
 
