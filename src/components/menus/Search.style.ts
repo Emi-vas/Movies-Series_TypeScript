@@ -29,11 +29,31 @@ export const SearchBar = styled.div`
             transform: scale(1.3);
         }
     }
+
+    @media screen and (max-width: 500px) {
+        input {
+            font-size: 1.3em;
+            padding: 6px 10px;
+        }
+        i {
+            font-size: 1.1em;
+        }
+    }
 `
 
 export const BarContainer = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 200px;
+`
+
+export const ErrMessage = styled.p`
+    font-size: 1.3em;
+    color: ${COLORS.red};
+    
+    @media screen and (max-width: 500px) {
+        font-size: 1.1em;
+    }
 `

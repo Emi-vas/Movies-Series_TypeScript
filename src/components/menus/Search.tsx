@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BarContainer, SearchBar } from './Search.style';
+import { BarContainer, ErrMessage, SearchBar } from './Search.style';
 import { API_KEY, COLORS, ICONS } from '../../assets/constant';
 import axios from 'axios';
 import { ListMovies } from '../../styles/Global.style';
@@ -19,6 +19,7 @@ const Search = ({ type }: Props) => {
     const [listItems, setListItems] = useState<any>([])
     const [listItemsFiltred, setListItemsFiltred] = useState<any>([])
     const [noRes, setNoRes] = useState(false)
+    const [toShort, setToShort] = useState(false)
 
     const searchItem = (force: boolean) => {
         //force = true to force the search whithout changing the searchValue
@@ -40,6 +41,10 @@ const Search = ({ type }: Props) => {
                     })
                     setNoRes(noRes)
                 })
+            } else {
+                if(!force) {
+                    setToShort(true)
+                }
             }
         }
     }
@@ -81,6 +86,7 @@ const Search = ({ type }: Props) => {
                             setSearchValue(e.target.value)
                             setSearchChanged(true)
                             setNoRes(false)
+                            setToShort(false)
                             if(listItems[0]) {
                                 setListItems([])
                             }
@@ -91,6 +97,7 @@ const Search = ({ type }: Props) => {
                     />
                     <i onClick={() => searchItem(false)} className={ICONS.search}></i>
                 </SearchBar>
+                { toShort && <ErrMessage>Your search is to short</ErrMessage>}
             </BarContainer>
             
             {
