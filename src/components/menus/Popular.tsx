@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios"
 import MovieCard from "../MovieCard";
 import { ListMovies } from "../../styles/Global.style";
+import { API_KEY } from "../../assets/constant";
 
 interface Props {
     type: "tv" | "movie",
@@ -11,11 +12,10 @@ interface Props {
 
 const Popular = ({type, reloadCard, setReloadCard}: Props) => {
     const [listMovies, setListMovies] = useState<any>([])
-    const apiKey = process.env.REACT_APP_MOVIEDB_API_KEY
 
     useEffect(() => {
         axios
-        .get(`https://api.themoviedb.org/3/${type}/popular?api_key=${apiKey}`)
+        .get(`https://api.themoviedb.org/3/${type}/popular?api_key=${API_KEY}`)
         .then((res) => setListMovies(res.data.results))
     }, [type])
 

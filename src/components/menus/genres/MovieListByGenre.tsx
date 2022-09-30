@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { API_KEY } from '../../../assets/constant';
 import { Genre } from '../../../assets/interfaces';
 import MovieCard from '../../MovieCard';
 import Pagination from '../../Pagination';
@@ -10,7 +11,6 @@ interface Props {
 }
 
 const MovieListByGenre = ({ genreSelected, type }: Props) => {
-    const apiKey = process.env.REACT_APP_MOVIEDB_API_KEY
     const [moviesList, setMoviesList] = useState<any>([])
 
     const [reloadCard, setReloadCard] = useState(false)
@@ -23,7 +23,7 @@ const MovieListByGenre = ({ genreSelected, type }: Props) => {
     useEffect(() => {
         window.scrollTo(0, 0)
 
-        axios.get(`https://api.themoviedb.org/3/discover/${type}?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageActive}&with_genres=${genreSelected.id}`)
+        axios.get(`https://api.themoviedb.org/3/discover/${type}?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageActive}&with_genres=${genreSelected.id}`)
         .then((res) => setMoviesList(res.data.results))
     }, [genreSelected, pageActive])
 
@@ -41,7 +41,7 @@ const MovieListByGenre = ({ genreSelected, type }: Props) => {
                     moviesList && moviesList.map((movieItem: any) => (
                         <MovieCard 
                             movie={{
-                                title : movieItem.title,
+                                title : type == "movie" ? movieItem.title : movieItem.name,
                                 id : movieItem.id,
                                 img : movieItem.poster_path,
                                 type: type

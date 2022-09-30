@@ -3,7 +3,7 @@ import { Back, BackgroundImage, BlockText, PageContainer, Poster, ShareLikeBloc 
 import axios from "axios"
 import { useNavigate } from "react-router";
 import Rating from "./Rating";
-import { ICONS } from "../assets/constant"
+import { API_KEY, ICONS } from "../assets/constant"
 import { Button } from "../styles/Global.style";
 import { addToList, isMovieOnList } from "../functions/yourList"
 
@@ -19,8 +19,6 @@ const MovieDetails = ({ id, type, reloadCard, setReloadCard }: Props) => {
     const [data, setData] = useState<any>(null)
     const [isTel, setIsTel] = useState<"Y" | 'N' | null>(null) //don't use boolean, you need to be sure of the screen before loading image
     const [isFavorit, setIsFavorit] = useState(false)
-
-    const apiKey = process.env.REACT_APP_MOVIEDB_API_KEY 
 
     useEffect(() => {
         let yourList: any = localStorage.getItem('yourList')
@@ -39,7 +37,7 @@ const MovieDetails = ({ id, type, reloadCard, setReloadCard }: Props) => {
 
     useEffect(() => {
         axios
-        .get(`https://api.themoviedb.org/3/${type}/${id}?api_key=${apiKey}&language=en-US`)
+        .get(`https://api.themoviedb.org/3/${type}/${id}?api_key=${API_KEY}&language=en-US`)
         .then((res) => {
             setData(res.data)
             console.log(res.data)
