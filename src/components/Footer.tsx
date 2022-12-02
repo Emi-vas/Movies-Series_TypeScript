@@ -1,4 +1,3 @@
-import React from 'react';
 import { COLORS } from '../assets/constant';
 
 const Footer = () => {

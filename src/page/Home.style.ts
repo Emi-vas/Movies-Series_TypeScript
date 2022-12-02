@@ -8,6 +8,11 @@ export const PageHome = styled.div`
     align-items: center;
     color: white;
     height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
     @media screen and (max-width: 500px) {
         h1 {
